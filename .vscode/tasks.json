@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build",
+      "type": "cmake",
+      "command": "build",
+      "problemMatcher": "$gcc",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "type": "cmake",
+      "label": "CMake: build",
+      "command": "build",
+      "targets": [
+        "all"
+      ],
+      "preset": "${command:cmake.activeBuildPresetName}",
+      "group": "build",
+      "problemMatcher": [],
+      "detail": "CMake template build task"
+    },
+
+    {
+      "label": "build vbat_test",
+      "type": "shell",
+      "command": "ninja -v",
+      "args": [],
+      "options": {
+          "cwd": "${workspaceFolder}/Core/test/vbat/out"
+      },
+      "group": {
+          "kind": "build",
+          "isDefault": true
+      },
+      "problemMatcher": []
+  },
+  {
+      "label": "clean vbat_test",
+      "type": "shell",
+      "command": "ninja -v clean",
+      "args": [],
+      "options": {
+          "cwd": "${workspaceFolder}/Core/test/vbat/out"
+      },
+      "group": {
+          "kind": "build",
+          "isDefault": true
+      }
+  },
+  {
+      "type": "shell",
+      "label": "run vbat_test",
+      "command": "./vbat_test.exe",
+      "args": [],
+      "options": {
+          "cwd": "${workspaceFolder}/Core/test/vbat/out"
+      },
+      "group": "test"
+  },
+  ]
+}
