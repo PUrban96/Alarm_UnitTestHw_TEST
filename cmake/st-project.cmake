@@ -74,12 +74,15 @@ target_link_options(
 
 target_sources(
     ${TARGET_NAME} PRIVATE
+    "Core\\Src\\adc.c"
+    "Core\\Src\\alarmSignal.c"
     "Core\\Src\\main.c"
     "Core\\Src\\stm32f4xx_hal_msp.c"
     "Core\\Src\\stm32f4xx_it.c"
     "Core\\Src\\syscalls.c"
     "Core\\Src\\sysmem.c"
     "Core\\Src\\system_stm32f4xx.c"
+    "Core\\Src\\vbat.c"
     "Core\\Startup\\startup_stm32f446retx.s"
     "Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_cortex.c"
     "Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_dma_ex.c"
@@ -95,6 +98,7 @@ target_sources(
     "Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_rcc.c"
     "Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_tim_ex.c"
     "Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_tim.c"
+    "Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal_uart.c"
     "Drivers\\STM32F4xx_HAL_Driver\\Src\\stm32f4xx_hal.c"
     "Core\\Src\\vbat.c"
     "Core\\Src\\adc.c"
