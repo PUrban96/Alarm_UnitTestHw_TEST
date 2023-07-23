@@ -1,4 +1,4 @@
-#include "unity/fixture/unity_fixture.h"
+#include "unity_fixture.h"
 
 TEST_GROUP_RUNNER(vbat)
 {
