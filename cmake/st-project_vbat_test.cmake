@@ -16,6 +16,7 @@ target_compile_definitions(
 
 target_include_directories(
     ${TARGET_NAME} PRIVATE
+    
     "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:${PROJECT_SOURCE_DIR}/Core\\Inc>"
     "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:${PROJECT_SOURCE_DIR}/Core\\Src>"
     "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:${PROJECT_SOURCE_DIR}/Core\\test\\vbat>"
@@ -36,24 +37,24 @@ target_include_directories(
 
 target_compile_options(
     ${TARGET_NAME} PRIVATE
-    "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:ASM>>:-g3>"
-    "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:-g3>"
-    "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:CXX>>:-g3>"
-    "$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:ASM>>:-g0>"
-    "$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:C>>:-g0>"
-    "$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:CXX>>:-g0>"
-    "$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:C>>:-Os>"
-    "$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:CXX>>:-Os>"
-    "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:>"
-    "$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:CXX>>:>"
-    "$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:C>>:>"
-    "$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:CXX>>:>"
-    "$<$<CONFIG:Debug>:-mcpu=cortex-m4>"
-    "$<$<CONFIG:Debug>:-mfpu=fpv4-sp-d16>"
-    "$<$<CONFIG:Debug>:-mfloat-abi=hard>"
-    "$<$<NOT:$<CONFIG:Debug>>:-mcpu=cortex-m4>"
-    "$<$<NOT:$<CONFIG:Debug>>:-mfpu=fpv4-sp-d16>"
-    "$<$<NOT:$<CONFIG:Debug>>:-mfloat-abi=hard>"
+    #"$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:ASM>>:-g3>"
+    #"$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:-g3>"
+    #"$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:CXX>>:-g3>"
+    #"$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:ASM>>:-g0>"
+    #"$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:C>>:-g0>"
+    #"$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:CXX>>:-g0>"
+    #"$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:C>>:-Os>"
+    #"$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:CXX>>:-Os>"
+    #"$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:C>>:>"
+    #"$<$<AND:$<CONFIG:Debug>,$<COMPILE_LANGUAGE:CXX>>:>"
+    #"$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:C>>:>"
+    #"$<$<AND:$<NOT:$<CONFIG:Debug>>,$<COMPILE_LANGUAGE:CXX>>:>"
+    #"$<$<CONFIG:Debug>:-mcpu=cortex-m4>"
+    #"$<$<CONFIG:Debug>:-mfpu=fpv4-sp-d16>"
+    #"$<$<CONFIG:Debug>:-mfloat-abi=hard>"
+    #"$<$<NOT:$<CONFIG:Debug>>:-mcpu=cortex-m4>"
+    #"$<$<NOT:$<CONFIG:Debug>>:-mfpu=fpv4-sp-d16>"
+    #"$<$<NOT:$<CONFIG:Debug>>:-mfloat-abi=hard>"
 )
 
 target_link_libraries(
@@ -66,15 +67,15 @@ target_link_directories(
 
 target_link_options(
     ${TARGET_NAME} PRIVATE
-    "$<$<CONFIG:Debug>:-mcpu=cortex-m4>"
-    "$<$<CONFIG:Debug>:-mfpu=fpv4-sp-d16>"
-    "$<$<CONFIG:Debug>:-mfloat-abi=hard>"
-    "$<$<NOT:$<CONFIG:Debug>>:-mcpu=cortex-m4>"
-    "$<$<NOT:$<CONFIG:Debug>>:-mfpu=fpv4-sp-d16>"
-    "$<$<NOT:$<CONFIG:Debug>>:-mfloat-abi=hard>"
-    -T
-    "$<$<CONFIG:Debug>:${PROJECT_SOURCE_DIR}/STM32F446RETX_FLASH.ld>"
-    "$<$<NOT:$<CONFIG:Debug>>:${PROJECT_SOURCE_DIR}/STM32F446RETX_FLASH.ld>"
+    #"$<$<CONFIG:Debug>:-mcpu=cortex-m4>"
+    #"$<$<CONFIG:Debug>:-mfpu=fpv4-sp-d16>"
+    #"$<$<CONFIG:Debug>:-mfloat-abi=hard>"
+    #"$<$<NOT:$<CONFIG:Debug>>:-mcpu=cortex-m4>"
+    #"$<$<NOT:$<CONFIG:Debug>>:-mfpu=fpv4-sp-d16>"
+    #"$<$<NOT:$<CONFIG:Debug>>:-mfloat-abi=hard>"
+    #-T
+    #"$<$<CONFIG:Debug>:${PROJECT_SOURCE_DIR}/STM32F446RETX_FLASH.ld>"
+    #"$<$<NOT:$<CONFIG:Debug>>:${PROJECT_SOURCE_DIR}/STM32F446RETX_FLASH.ld>"
 )
 
 target_sources(
