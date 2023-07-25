@@ -27,13 +27,13 @@ set(ASM_FLAGS "-x assembler-with-cpp")
 # Warning flags for C++
 # -Wall - standard warnings
 # -Wextra - extended warnings
-set(CXX_WARNINGS "-Wall -Wextra")
+set(CXX_WARNINGS "-Wall")
 
 # Warning flags for C
 # -Wall - standard warnings
 # -Wextra - extended warnings
 # -Wstrict-prototypes - additional warnings for function prototypes
-set(C_WARNINGS "-Wall -Wextra -Wstrict-prototypes")
+set(C_WARNINGS "-Wall")
 
 set(LD_SCRIPT ${CMAKE_SOURCE_DIR}/STM32F446RETX_FLASH.ld)
 # Linker flags
