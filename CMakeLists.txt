@@ -88,23 +88,39 @@ add_executable(${PROJECT_NAME} ${C_SRCS_HAL_LIB} ${C_SRCS_APP} ${C_SRCS_TEST})
 
 
 add_custom_command(
-    TARGET ${PROJECT_NAME} POST_BUILD
+    TARGET ${PROJECT_NAME} 
     COMMAND ${CMAKE_SIZE} $<TARGET_FILE:${PROJECT_NAME}>
 )
 
 #generate hex file
 add_custom_command(
-    TARGET ${PROJECT_NAME} POST_BUILD
+    TARGET ${PROJECT_NAME} 
     COMMAND ${CMAKE_OBJCOPY} -O ihex
     $<TARGET_FILE:${PROJECT_NAME}> ${PROJECT_NAME}.hex
 )
 
 #generate bin file
 add_custom_command(
-    TARGET ${PROJECT_NAME} POST_BUILD
+    TARGET ${PROJECT_NAME} 
     COMMAND ${CMAKE_OBJCOPY} -O binary
     $<TARGET_FILE:${PROJECT_NAME}> ${PROJECT_NAME}.bin
 )
+
+#generate extended listing
+add_custom_command(
+    TARGET ${PROJECT_NAME} 
+    COMMAND ${CMAKE_OBJDUMP} -h -S
+        $<TARGET_FILE:${PROJECT_NAME}> > ${PROJECT_NAME}.lss
+)
+
+#generate memory dump
+add_custom_command(
+    TARGET ${PROJECT_NAME} 
+    COMMAND ${CMAKE_OBJDUMP} -x --syms
+        $<TARGET_FILE:${PROJECT_NAME}> > ${PROJECT_NAME}.dmp
+)
+
+
 
 
 
