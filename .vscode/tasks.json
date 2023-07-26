@@ -31,7 +31,7 @@
     "command": "ninja -v",
     "args": [],
     "options": {
-        "cwd": "${workspaceFolder}/test/out"
+        "cwd": "${workspaceFolder}/test/vbat_hw/out"
     },
     "group": {
         "kind": "build",
@@ -45,7 +45,7 @@
   "command": "ninja -v clean",
   "args": [],
   "options": {
-      "cwd": "${workspaceFolder}/test/out"
+      "cwd": "${workspaceFolder}/test/vbat_hw/out"
   },
   "group": {
       "kind": "build",
