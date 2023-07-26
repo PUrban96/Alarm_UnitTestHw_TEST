@@ -24,6 +24,21 @@
       "detail": "CMake template build task"
     },
 
+  {
+    "label": "build vbat_test_HW",
+    "type": "shell",
+    "command": "ninja -v",
+    "args": [],
+    "options": {
+        "cwd": "${workspaceFolder}/Core/test/out"
+    },
+    "group": {
+        "kind": "build",
+        "isDefault": true
+    },
+    "problemMatcher": []
+},
+
     {
       "label": "build vbat_test",
       "type": "shell",

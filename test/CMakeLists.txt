@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-set(CMAKE_TOOLCHAIN_FILE ../../cmake/gcc-arm-none-eabi.cmake)
+set(CMAKE_TOOLCHAIN_FILE ../cmake/gcc-arm-none-eabi.cmake)
 # Allow assembler
 enable_language(ASM)
 
@@ -9,16 +9,16 @@ project("vbat_HW_UNIT_TEST" C ASM)
 
 
 set(INCLUDE_DIRS_HAL_LIB
-
-    ../../Drivers/STM32F4xx_HAL_Driver/Inc
-    ../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
-    ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include
-    ../../Drivers/CMSIS/Include
+ 
+    ../Drivers/STM32F4xx_HAL_Driver/Inc
+    ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy
+    ../Drivers/CMSIS/Device/ST/STM32F4xx/Include
+    ../Drivers/CMSIS/Include
 )
 set(INCLUDE_DIRS_APP
 
-    ../Inc
-    ../Src
+    ../Core/Inc
+    ../Core/Src
 )
 set(INCLUDE_DIRS_TEST
 
@@ -40,33 +40,33 @@ set(GLOBAL_DEFINES
 
 set(C_SRCS_HAL_LIB
 
-    ../Src/stm32f4xx_hal_msp.c
-    ../Src/stm32f4xx_it.c
-    ../Src/syscalls.c
-    ../Src/sysmem.c
-    ../Src/system_stm32f4xx.c
-    ../Startup/startup_stm32f446retx.s
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
-    ../../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+    ../Core/Src/stm32f4xx_hal_msp.c
+    ../Core/Src/stm32f4xx_it.c
+    ../Core/Src/syscalls.c
+    ../Core/Src/sysmem.c
+    ../Core/Src/system_stm32f4xx.c
+    ../Core/Startup/startup_stm32f446retx.s
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
+    ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
 )
 
 set(C_SRCS_TEST
 
-    ../Src/vbat.c
+    ../Core/Src/vbat.c
 
     vbat/vbat_test_runner.c
     vbat/vbat_test.c
