@@ -43,6 +43,20 @@
 
 // vbat unit test on Hw
 // ********************************************************************* 
+{
+  "label": "CMAKE build vbat_test_HW",
+  "type": "shell",
+  "command": "cmake -Bout -GNinja",
+  "args": [],
+  "options": {
+      "cwd": "${workspaceFolder}/test/vbat_hw"
+  },
+  "group": {
+      "kind": "build",
+      "isDefault": true
+  },
+  "problemMatcher": []
+},
   {
     "label": "build vbat_test_HW",
     "type": "shell",
@@ -92,13 +106,28 @@
 
 // vbat unit test on PC
 // ********************************************************************* 
+
+{
+  "label": "CMAKE build vbat_test",
+  "type": "shell",
+  "command": "cmake -Bout -GNinja",
+  "args": [],
+  "options": {
+      "cwd": "${workspaceFolder}/test/vbat"
+  },
+  "group": {
+      "kind": "build",
+      "isDefault": true
+  },
+  "problemMatcher": []
+},
     {
       "label": "build vbat_test",
       "type": "shell",
       "command": "ninja -v",
       "args": [],
       "options": {
-          "cwd": "${workspaceFolder}/Core/test/vbat/out"
+          "cwd": "${workspaceFolder}/test/vbat/out"
       },
       "group": {
           "kind": "build",
@@ -112,7 +141,7 @@
       "command": "ninja -v clean",
       "args": [],
       "options": {
-          "cwd": "${workspaceFolder}/Core/test/vbat/out"
+          "cwd": "${workspaceFolder}/test/vbat/out"
       },
       "group": {
           "kind": "build",
@@ -125,7 +154,7 @@
       "command": "./vbat_test.exe",
       "args": [],
       "options": {
-          "cwd": "${workspaceFolder}/Core/test/vbat/out"
+          "cwd": "${workspaceFolder}/test/vbat/out"
       },
       "group": "test"
   },

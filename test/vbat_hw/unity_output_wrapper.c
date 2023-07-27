@@ -1,6 +1,6 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
-#include "output.h"
+#include "unity_output_wrapper.h"
 
 void output_init(void)
 {

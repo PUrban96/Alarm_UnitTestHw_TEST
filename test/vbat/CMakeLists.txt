@@ -7,17 +7,18 @@ add_subdirectory(../unity unity)
 set(CMAKE_C_FLAGS  "${CMAKE_CXX_FLAGS} -Wall -Wextra")
 
 set(INCLUDE_DIRS
-	../../src
+	../../Core/Src
 )
 
 set(TEST_INCLUDE_DIRS
-	../../src
-	..
+	../../Core/Src
+	../unity/core
+	../unity/fixture
 	.
 )
 
 set(SRCS
-	../../src/vbat.c
+	../../Core/Src/vbat.c
 )
 
 set(TEST_SRCS

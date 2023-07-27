@@ -23,6 +23,7 @@ set(INCLUDE_DIRS_APP
 set(INCLUDE_DIRS_TEST
 
     ../vbat
+    ../vbat_hw
     ../unity
     ../unity/fixture
     ../unity/core
@@ -68,12 +69,13 @@ set(C_SRCS_TEST
 
     ../../Core/Src/vbat.c
 
+    vbat_test_hw_main.c
+    unity_output_wrapper.c
+
     ../vbat/vbat_test_runner.c
     ../vbat/vbat_test.c
     ../vbat/mock_alarmSignal.c
     ../vbat/mock_adc.c
-    ../vbat/output.c
-    ../vbat/vbat_test_main.c
 
     ../unity/core/unity.c
     ../unity/fixture/unity_fixture.c

@@ -3,6 +3,7 @@
   "cmake.configureOnOpen": true,
   "files.associations": {
     "main.h": "c",
-    "output.h": "c"
+    "output.h": "c",
+    "unity_output_wrapper.h": "c"
   }
 }
