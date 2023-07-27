@@ -24,7 +24,25 @@
       "detail": "CMake template build task"
     },
 
+    {
+      "label": "Programming app",
+      "type": "shell",
+      "command": "STM32_Programmer_CLI",
+      "args": [
+        "--connect",
+        "port=swd",
+        "--download",
+        "${command:cmake.launchTargetPath}",
+        "-hardRst"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
 
+// vbat unit test on Hw
+// ********************************************************************* 
   {
     "label": "build vbat_test_HW",
     "type": "shell",
@@ -54,7 +72,26 @@
   "problemMatcher": []
 },
 
+{
+  "label": "Programming unit test",
+  "type": "shell",
+  "command": "STM32_Programmer_CLI",
+  "args": [
+    "--connect",
+    "port=swd",
+    "--download",
+    "${workspaceFolder}/test/vbat_hw/out/vbat_HW_UNIT_TEST.elf",
+    "-hardRst"
+  ],
+  "options": {
+    "cwd": "${workspaceFolder}/test/vbat_hw/out"
+  },
+  "problemMatcher": []
+},
+// ********************************************************************* 
 
+// vbat unit test on PC
+// ********************************************************************* 
     {
       "label": "build vbat_test",
       "type": "shell",
@@ -92,5 +129,7 @@
       },
       "group": "test"
   },
+  // ********************************************************************* 
+
   ]
 }
